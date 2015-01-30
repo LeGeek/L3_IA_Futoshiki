@@ -36,8 +36,3 @@ bool controleDifferenceCase(Case aCaseA, Case aCaseB) {
     }
     return false;
 }
-
-
-bool controleDifferenceLigne(Case aCase) {
-    return false;
-}

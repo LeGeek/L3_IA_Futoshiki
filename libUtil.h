@@ -23,6 +23,7 @@ typedef struct Case {
 } Case;
 
 typedef struct fukushiki {
+    unsigned int taille;
     Case cases[];
 } Fukushiki;
 
@@ -37,5 +38,5 @@ void afficher_case(Case aCase);
 
 bool controle_contraintes(Case aCase);
 bool controleDifferenceCase(Case aCaseA, Case aCaseB);
-bool controleDifferenceLigne(Case aCase);
+bool controleDifferenceLigne(Fukushiki fukushiki1, Case aCase);
 
