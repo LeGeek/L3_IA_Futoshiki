@@ -17,9 +17,9 @@ typedef enum valeur_fixe {
 typedef struct Case {
     Coordonnees coordonnes;
     unsigned int valeur;
-    VALEUR_FIXE valeurFixe;
-//    Coordonnees superiereA[];
-//    Coordonnees inferieureA[];
+    bool estFourni;
+    Coordonnees jeDoisEtreSuperiereA[];
+    Coordonnees jeDoisEtreInferieureA[];
 } Case;
 
 typedef struct fukushiki {
@@ -31,10 +31,11 @@ Coordonnees creer_coordonnes(int x, int y);
 
 void afficher_coordonnees(Coordonnees coordonnees1);
 
-Case creerCase(Coordonnees coordonnees, unsigned int valeur, VALEUR_FIXE valeurFixe);
+Case creerCase(Coordonnees coordonnees, unsigned int valeur, bool estFourni);
 
 void afficher_case(Case aCase);
 
 bool controle_contraintes(Case aCase);
-bool controleDifferenceCase(Case aCase);
+bool controleDifferenceCase(Case aCaseA, Case aCaseB);
+bool controleDifferenceLigne(Case aCase);
 

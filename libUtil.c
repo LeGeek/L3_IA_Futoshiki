@@ -13,11 +13,11 @@ void afficher_coordonnees(Coordonnees coordonnees1) {
     printf("(%d, %d)", coordonnees1.x, coordonnees1.y);
 }
 
-Case creerCase(Coordonnees coordonnees, unsigned int valeur, VALEUR_FIXE valeurFixe) {
+Case creerCase(Coordonnees coordonnees, unsigned int valeur, bool estFourni) {
     Case result;
     result.coordonnes = coordonnees;
     result.valeur = valeur;
-    result.valeurFixe = valeurFixe;
+    result.estFourni = estFourni;
 
     return result;
 
@@ -31,6 +31,13 @@ void afficher_case(Case aCase) {
 }
 
 bool controleDifferenceCase(Case aCaseA, Case aCaseB) {
+    if(aCaseA.valeur == aCaseB.valeur) {
+        return true;
+    }
+    return false;
+}
 
+
+bool controleDifferenceLigne(Case aCase) {
     return false;
 }
