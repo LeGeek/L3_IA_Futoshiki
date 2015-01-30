@@ -1,3 +1,6 @@
+#ifndef __LIBUTIL_H__
+#define __LIBUTIL_H__
+
 #include <stdbool.h>
 
 #define TAILLE_GRILLE 10
@@ -18,13 +21,13 @@ typedef struct Case {
     Coordonnees coordonnes;
     unsigned int valeur;
     bool estFourni;
-    Coordonnees jeDoisEtreSuperiereA[];
-    Coordonnees jeDoisEtreInferieureA[];
+    Coordonnees * jeDoisEtreSuperiereA;
+    Coordonnees * jeDoisEtreInferieureA;
 } Case;
 
 typedef struct fukushiki {
     unsigned int taille;
-    Case cases[];
+    Case * cases;
 } Fukushiki;
 
 
@@ -40,3 +43,4 @@ bool controle_contraintes(Case aCase);
 bool controleDifferenceCase(Case aCaseA, Case aCaseB);
 bool controleDifferenceLigne(Fukushiki fukushiki1, Case aCase);
 
+#endif
